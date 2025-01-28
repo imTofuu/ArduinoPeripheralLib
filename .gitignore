@@ -1,0 +1,5 @@
+
+.vscode/
+*.ino
+.pio
+ArduinoPeripheralLib.cpp
