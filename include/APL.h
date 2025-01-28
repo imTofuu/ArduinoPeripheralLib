@@ -20,9 +20,6 @@ namespace APL {
 
 template <typename T, typename... InitArgs>
 T* APL::addPeripheral(InitArgs... params) {
-	T* existingPeripheral = getPeripheral<T>();
-	if (existingPeripheral)
-		return existingPeripheral;
 	T* peripheral = new T(params...);
 	peripherals.push_back(peripheral);
 	return peripheral;
