@@ -16,8 +16,9 @@ namespace APL {
     void ShiftLightPeripheral::setNumLightsOn(size_t lightsOn) { this->m_lightsOn = lightsOn; }
     void ShiftLightPeripheral::setNumLightsOnPointer(size_t* lightsOn) { this->m_lightsOnPointer = lightsOn; }
 
-    void ShiftLightPeripheral::start() {
+    int ShiftLightPeripheral::start() {
         m_lights.begin();
+        return 0;
     }
 
     void ShiftLightPeripheral::update() {

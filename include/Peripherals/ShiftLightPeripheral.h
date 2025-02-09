@@ -19,7 +19,10 @@ namespace APL {
         void setNumLightsOn(size_t lightsOn);
         void setNumLightsOnPointer(size_t* lightsOn);
 
-        void start() override;
+        size_t getNumLights() const { return m_numLights; }
+        size_t getNumLightsOn() const { return m_lightsOn; }
+
+        int start() override;
         void update() override;
 
     private:

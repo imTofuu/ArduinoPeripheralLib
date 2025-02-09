@@ -10,7 +10,7 @@ namespace APL {
         virtual ~Peripheral() {}
 
         // Called on APL::start
-        virtual void start() {}
+        virtual int start() { return 0; }
         // Called on APL::update
         virtual void update() {}
     };
