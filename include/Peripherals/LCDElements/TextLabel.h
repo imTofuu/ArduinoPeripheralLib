@@ -8,6 +8,8 @@ namespace APL {
     class TextLabel : public LCDElement {
     public:
 
+        UDim2 getSize(Arduino_GFX& display) override;
+
         void setText(const std::string& text) { thisFrame.text = text; }
         std::string getText() { return thisFrame.text; }
 
@@ -23,7 +25,6 @@ namespace APL {
     protected:
 
         void draw(Arduino_GFX& display) override;
-        UDim2 getSize(Arduino_GFX& display) override;
 
     private:
 

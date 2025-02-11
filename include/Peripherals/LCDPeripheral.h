@@ -112,6 +112,8 @@ namespace APL {
 
         void setCurrentPage(const std::shared_ptr<LCDPage>& page) { m_currentPage = page; }
 
+        T* getDisplay() { return m_display; }
+
     private:
 
         std::shared_ptr<LCDPage> m_currentPage;
