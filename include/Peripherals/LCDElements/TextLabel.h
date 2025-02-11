@@ -17,7 +17,6 @@ namespace APL {
         void setTextSize(uint8_t size) { thisFrame.textSize = size; }
         uint8_t getTextSize() { return thisFrame.textSize; }
 
-        // padding scale is relative to element size
         void setTextPadding(UDim2 padding) { thisFrame.textPadding = padding; }
         UDim2 getTextPadding() { return thisFrame.textPadding; }
 

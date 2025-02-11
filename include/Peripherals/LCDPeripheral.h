@@ -34,6 +34,7 @@ namespace APL {
         } verticalAlignment = VerticalAlignment::TOP;
 
         UI16Vector2 absolute(uint16_t w, uint16_t h);
+        UI16Vector2 absolute(uint16_t displayW, uint16_t displayH, uint16_t elementW, uint16_t elementH);
 
         bool operator==(const UDim2& other) {
             return scale == other.scale &&

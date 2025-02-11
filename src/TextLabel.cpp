@@ -9,8 +9,8 @@ namespace APL {
         display.setTextWrap(false);
 
         UI16Vector2 absoluteSize = getSize(display).absolute(display.width(), display.height());
-        UI16Vector2 absolutePosition = getPosition().absolute(display.width(), display.height());
-        UI16Vector2 absolutePadding = thisFrame.textPadding.absolute(absoluteSize.x, absoluteSize.y);
+        UI16Vector2 absolutePosition = getPosition().absolute(display.width(), display.height(), absoluteSize.x, absoluteSize.y);
+        UI16Vector2 absolutePadding = thisFrame.textPadding.absolute(display.width(), display.height());
 
         if (!p_updated) {
             display.setCursor(absolutePosition.x + (absolutePadding.x / 2), absolutePosition.y + (absolutePadding.y / 2));
@@ -41,7 +41,7 @@ namespace APL {
 
         display.getTextBounds(thisFrame.text.c_str(), absolutePosition.x, absolutePosition.y, &x, &y, &w, &h);
 
-        UI16Vector2 absolutePadding = thisFrame.textPadding.absolute(w, h);
+        UI16Vector2 absolutePadding = thisFrame.textPadding.absolute(display.width(), display.height());
 
         return { {0, 0}, {static_cast<uint16_t>(w + absolutePadding.x), static_cast<uint16_t>(h + absolutePadding.y)} };
     }
