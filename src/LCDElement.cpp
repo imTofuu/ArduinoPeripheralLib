@@ -1,4 +1,4 @@
-#include <Peripherals/LCDPeripheral.h>
+#include <Peripherals/LCDElements/LCDElement.h>
 
 namespace APL {
 

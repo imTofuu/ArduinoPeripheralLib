@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Peripherals/LCDPeripheral.h>
+#include "LCDElement.h"
 
 namespace APL {
 
