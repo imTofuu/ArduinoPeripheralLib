@@ -14,7 +14,6 @@ namespace APL {
     }
 
     void ShiftLightPeripheral::setNumLightsOn(size_t lightsOn) { this->m_lightsOn = lightsOn; }
-    void ShiftLightPeripheral::setNumLightsOnPointer(size_t* lightsOn) { this->m_lightsOnPointer = lightsOn; }
 
     int ShiftLightPeripheral::start() {
         m_lights.begin();
@@ -24,10 +23,12 @@ namespace APL {
     void ShiftLightPeripheral::update() {
         m_lights.clear();
 
-        if (m_lightsOnPointer) m_lightsOn = *m_lightsOnPointer;
-
         for (int lightIndex = 0; lightIndex < m_lightsOn; lightIndex++) {
             m_lights.setPixelColor(lightIndex, m_lightColours[lightIndex]);
+        }
+
+        for (auto& [index, colour] : m_lightExceptions) {
+            m_lights.setPixelColor(index, colour);
         }
 
         m_lights.show();

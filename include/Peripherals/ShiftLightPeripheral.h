@@ -3,6 +3,7 @@
 #include <Peripheral.h>
 
 #include <Adafruit_NeoPixel.h>
+#include <unordered_map>
 
 namespace APL {
 
@@ -17,7 +18,9 @@ namespace APL {
 
         void setLightColourRange(float start, float end, uint32_t colour);
         void setNumLightsOn(size_t lightsOn);
-        void setNumLightsOnPointer(size_t* lightsOn);
+
+        void setLightException(size_t lightIndex, uint32_t colour) { m_lightExceptions[lightIndex] = colour; }
+        void removeLightException(size_t lightIndex) { m_lightExceptions.erase(lightIndex); }
 
         size_t getNumLights() const { return m_numLights; }
         size_t getNumLightsOn() const { return m_lightsOn; }
@@ -29,9 +32,9 @@ namespace APL {
 
         Adafruit_NeoPixel m_lights;
 
-        size_t m_numLights;
+        std::unordered_map<size_t, uint32_t> m_lightExceptions;
 
-        size_t* m_lightsOnPointer = nullptr;
+        size_t m_numLights;
         size_t m_lightsOn = 0;
 
         uint32_t* m_lightColours;
